@@ -32,20 +32,25 @@ int main()
     else{
       printf("Player 2 it's your turn.\n");
     }
-    printf("Choisis un emplacement\n");
-    printf("veuillez l'écrire sous la forme 1/2\n");
-    scanf("%d/%d", &x, &y);
+    printf("Choose an emplacement\n");
+    printf("line : ");
+    scanf("%d", &x);
 
     if(x!=1 && x!=2 && x!=3){      //cas où la valeur x n'est pas disponible
-      printf("Cette valeur n'est pas disponible...\n");
-      printf("Veuillez re-séléctionner la ligne et la colonne\n");
-      scanf("%d/%d", &x, &y);
+      printf("this line is not available...\n");
+      printf("please select again the line...\n");
+      printf("line : ");
+      scanf("%d", &x);
     }
+    
+    printf("colomn : ");
+    scanf("%d", &y);
 
     if(y!=1 && y!=2 && y!=3){      //cas où la valeur y n'est pas disponible
-      printf("Cette valeur n'est pas disponible...\n");
-      printf("Veuillez re-séléctionner la ligne et la colonne\n");
-      scanf("%d/%d", &x, &y);
+      printf("This colomn is not available...\n");
+      printf("please select again the colomn...\n");
+      printf("Colomn : ");
+      scanf("%d", &y);
     }
       
     if(plateau[x-1][y-1] == 'X' || plateau[x-1][y-1] == 'O'){      //cas où la case est déjà sélectionnée
@@ -146,5 +151,3 @@ int main()
   printf("Bien joué à vous deux !!\n il n'y a cependant pas de gagnant...\n");
   return 0;
 }
-
-
